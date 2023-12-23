@@ -1,6 +1,18 @@
-# vuetify
+# [Generateuuid.net](https://generateuuid.net)
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple app built with Vue + Tailwind + vite + vite-ssg - vite-pwa that that randomly generates UUIDs (universally unique identifier) for developers to copy and paste.
+
+**Key Features**
+* UUID generator for Version 1, Version 3, Version 4 and Version 5
+* Define Namespace and Name for Version 3 and Version 5 UUIDs
+* Validate UUIDs
+* Darkmode
+* 100% Lighthouse score
+
+
+<div align="center">
+https://generateuuid.net
+</div>
 
 ## Recommended IDE Setup
 
@@ -39,24 +51,6 @@ npm run dev
 npm run build
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
 
 ### Lint with [ESLint](https://eslint.org/)
 

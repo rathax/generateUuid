@@ -71,8 +71,8 @@
   
   
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
-import { v4 as uuidv4, v1 as uuidv1, v5 as uuidv5, validate, version, NIL, parse, } from 'uuid';
+import { ref } from 'vue';
+import { v4 as uuidv4, v1 as uuidv1 } from 'uuid';
 
 import { useI18n } from "vue-i18n";
 import FormRadio from "@/components/FormRadio.vue";
