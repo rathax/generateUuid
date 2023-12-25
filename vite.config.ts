@@ -12,7 +12,6 @@ export default defineConfig((options) => {
 return {
   ssgOptions: {
     crittersOptions: {
-      preload: 'media'
     }
   },
 
