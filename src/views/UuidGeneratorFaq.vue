@@ -65,7 +65,7 @@
 
         <h3 class="h3">Can UUIDs be used as primary keys in databases?</h3>
         <p class="paragraph">Yes, UUIDs can be used as primary keys. They provide advantages in distributed systems and
-            scenarios where uniqueness across systems is crucial. However, they are larger and can be, in certain
+            scenarios where uniqueness across systems is crucial. However, they are larger and can, in certain
             environments, be less efficient than traditional incremental IDs.</p>
 
         <h3 class="h3">Can I use UUIDs in databases that do not support a native UUID type?</h3>
