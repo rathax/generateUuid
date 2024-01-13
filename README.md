@@ -2,7 +2,7 @@
 
 This is a simple app built with Vue + Tailwind + vite + vite-ssg - vite-pwa that that randomly generates UUIDs (universally unique identifier) for developers to copy and paste.
 
-## Key Features**
+## Key Features
 * UUID generator for Version 1, Version 3, Version 4 and Version 5
 * Define Namespace and Name for Version 3 and Version 5 UUIDs
 * Validate UUIDs
