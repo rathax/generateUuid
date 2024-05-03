@@ -4,10 +4,7 @@
  -->
   <div :data-theme="theme" class="bg-surface-ground text-surface-900">
     <PageHeader @darkModeToggled="toggleDarkMode" :darkmode="theme === 'dark'" />
-
-    <div  class="">
-
-
+    <div class="">
       <div>
         <RouterView></RouterView>
       </div>
@@ -22,13 +19,19 @@ import PageHeader from "./views/layout/PageHeader.vue";
 import { ref } from "vue";
 const { t } = useI18n();
 
-const theme = ref<'dark' | 'light'>("dark")
+  
+
+const theme = ref<'dark' | 'light'>(localStorage.getItem("theme") as 'dark' | 'light' ?? "dark")
 
 const toggleDarkMode = () => {
   if (theme.value === 'light') {
     theme.value = 'dark'
+    localStorage.setItem("theme", "dark");
+
   } else {
     theme.value = 'light'
+    localStorage.setItem("theme", "light");
+
   }
 }
 

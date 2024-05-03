@@ -6,10 +6,10 @@
             { 'data-[focus]:border-error-500 hover:border-error-500 border-error-500 ring-error-200': validated && valid === false },
             { 'data-[focus]:border-success-500 hover:border-success-500 border-success-500': validated && valid === true },
         ]" @click="inputRef?.focus()">
-            <input v-bind="{ ...attributes, ...props }" v-model="value" ref="inputRef" :id="id+'-input'" :aria-labelledby="id+'-label'"
-                class="w-full bg-transparent focus:ring-0 focus:outline-none" @focus="isFocused = true"
-                @blur="isFocused = false">
-            <label :data-label-active="dataLabelActive"  :id="id+'-label'" v-if="label" :class="[
+            <input v-bind="{ ...attributes, ...props }" v-model="value" ref="inputRef" :id="id + '-input'"
+                :aria-labelledby="id + '-label'" class="w-full bg-transparent focus:ring-0 focus:outline-none"
+                @focus="isFocused = true" @blur="isFocused = false">
+            <label :data-label-active="dataLabelActive" :id="id + '-label'" v-if="label" :class="[
                 'absolute top-1/2 data-[label-active]:-top-[0.85rem] data-[label-active]:text-sm transition-all ease-in-out  data-[label-active]:leading-[0px] leading-[0px] text-surface-500 select-text',
                 floatingLabel ? 'data-[label-active]:text-2xl left-3' : 'data-[label-active]:text-base left-0'
             ]">{{ label }}</label>

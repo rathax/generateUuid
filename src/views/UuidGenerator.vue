@@ -1,19 +1,16 @@
 
 <template>
-  <div class=" m-auto mt-40">
+  <div class="m-auto mt-40">
     <section>
-      <UuidVersionGenerator title="Version 4 (random) UUID:" :uuid="valueGuuidV4" @click:refresh="valueGuuidV4 = uuidv4()"
+      <UuidVersionGenerator :uuid="valueGuuidV4" @click:refresh="valueGuuidV4 = uuidv4()"
         @click:copy="copyToClipboard(valueGuuidV4)">
-        <h2 class="text-2xl font-bold mb-5 text-center">Version 4 (random) UUID:</h2>
+        <AnchorHeading id="UUIDv4" class="text-2xl mb-5 text-center"  text="Version 4 (random) UUID:" />
       </UuidVersionGenerator>
-      <UuidVersionGenerator title="Version 1 (timestamp) UUID:" class="mt-14" :uuid="valueGuuidV1"
+      <UuidVersionGenerator class="mt-14" :uuid="valueGuuidV1"
         @click:refresh="valueGuuidV1 = uuidv1()" @click:copy="copyToClipboard(valueGuuidV1)">
-        <h2 class="text-2xl font-bold mb-5 text-center">Version 1 (timestamp) UUID:</h2>
+        <AnchorHeading id="UUIDv1" class="text-2xl mb-5 text-center"  text="Version 1 (timestamp) UUID:" />
       </UuidVersionGenerator>
-
     </section>
-
-
 
     <div class="border-b-2 border-surface-200  my-32 w-2/6 mx-auto"> </div>
 
@@ -21,8 +18,7 @@
       <UuidGeneratorNamespace class="" />
       <UuidGeneratorValidate class="mt-10"></UuidGeneratorValidate>
       <FormCard class="mt-10 m-auto">
-        <h2 class=" text-3xl font-bold text-center mb-10 mt-4">Generate Bulk</h2>
-
+        <AnchorHeading id="Generate-Bulk" class="text-3xl text-center mb-10 mt-4" tag="h2" text="Generate Bulk" />
         <div class="mb-5">
           <div class="flex gap-5 md:gap-10 items-center" role="radiogroup"  aria-labelledby="gc8Dz" >
             <label id="gc8Dz">Type:</label>
@@ -84,12 +80,11 @@ import FormCard from '@/components/FormCard.vue';
 import UuidGeneratorNamespace from './UuidGeneratorNamespace.vue';
 import UuidGeneratorValidate from './UuidGeneratorValidate.vue'
 import UuidGeneratorFaq from './UuidGeneratorFaq.vue';
+import AnchorHeading from '@/components/AnchorHeading.vue';
 
 
-const { t } = useI18n();
-
-const valueGuuidV1 = ref(uuidv1())
-const valueGuuidV4 = ref(uuidv4())
+const valueGuuidV1 = ref(import.meta.env.SSR ? " 00000000-0000-0000-0000-000000000000" : uuidv1())
+const valueGuuidV4 = ref(import.meta.env.SSR ? " 00000000-0000-0000-0000-000000000000" : uuidv4())
 
 const copyToClipboard = (string: string) => {
   navigator.clipboard.writeText(string);

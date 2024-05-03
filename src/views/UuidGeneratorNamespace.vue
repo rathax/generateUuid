@@ -1,7 +1,7 @@
 
 <template>
     <FormCard class="m-auto">
-        <h2 class=" text-3xl font-bold text-center mb-14 mt-4">Namespaced UUIDs</h2>
+        <AnchorHeading id="Namespaced-UUIDs" class="text-3xl mb-14 mt-4 text-center"  text="Namespaced UUIDs" />
 
         <div class="flex flex-col sm:flex-row gap-12 sm:gap-5 ">
             <FormInput id="dc84d" class="w-full" floating-label label="Name" v-model="name" />
@@ -10,13 +10,13 @@
         </div>
         <UuidVersionGenerator class="mt-14" :uuid="valueGuuidV3" @click:copy="copyToClipboard(valueGuuidV3)"
             @click:refresh="nameSpace = uuidv4()">
-            <h3 class="text-2xl font-bold mb-5 text-center">Version 3 (namespace w/ MD5) UUID:</h3>
+            <AnchorHeading id="UUIDv3" class="text-2xl  mb-5 text-center" tag="h3" text="Version 3 (namespace w/ MD5) UUID:" />
         </UuidVersionGenerator>
         <div class="text-base mt-3 text-center"> Note: Per the RFC, "If backward compatibility is not an issue, SHA-1
             Version 5 is preferred."</div>
         <UuidVersionGenerator class="mt-12" :uuid="valueGuuidV5" @click:refresh="nameSpace = uuidv4()"
             @click:copy="copyToClipboard(valueGuuidV5)">
-            <h3 class="text-2xl font-bold mb-5 text-center">Version 5 (namespace w/ SHA-1) UUID:</h3>
+            <AnchorHeading id="UUIDv5" class="text-2xl  mb-5 text-center" tag="h3" text="Version 5 (namespace w/ SHA-1) UUID:" />
         </UuidVersionGenerator>
     </FormCard>
 </template>
@@ -30,6 +30,10 @@ import { useI18n } from "vue-i18n";
 import FormInput from '@/components/FormInput.vue';
 import UuidVersionGenerator from '@/views/UuidVersionGenerator.vue';
 import FormCard from '@/components/FormCard.vue';
+import { useRouter } from "vue-router"
+import AnchorHeading from '@/components/AnchorHeading.vue';
+
+const router = useRouter()
 
 const { t } = useI18n();
 
