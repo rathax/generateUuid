@@ -4,13 +4,19 @@
     <slot></slot>
     <div
       class="flex flex-col sm:flex-row w-full justify-between items-center text-center px-4 md:px-8 py-3 border border-surface-border transition-all appearance-none rounded-md focus:outline-none focus:outline-offset-0  bg-surface-card shadow-sm shadow-surface-100 ">
-      <div class=" text-2xl"> {{ props.uuid }}</div>
-      <div class="flex gap-4 mt-4 sm:mt-0 l px-5 sm:px-0 w-full sm:w-auto"  >
+      <div class=" text-2xl">
+        <span v-if="!uuid" class="text-transparent">984b94e7-2ac5-4e04-a887-1d9a7ec241e8</span>
+        <Transition v-else name="fade" appear>
+          <span>{{ props.uuid  }}</span>
+        </Transition>
+      </div>
+      <div class="flex gap-4 mt-4 sm:mt-0 l px-5 sm:px-0 w-full sm:w-auto">
         <FormButton @click="handleRefresh" class="flex justify-center w-full sm:w-auto " aria-label="refresh UUID">
           <RefreshIcon class="fill-surface-0 w-6 h-6" :class="{ 'animate-[spin_500ms_ease-in-out_forwards] ': spin }">
           </RefreshIcon>
         </FormButton>
-        <FormButton @click="handleCopyButtonClick" class="flex justify-center w-full sm:w-auto min-w-[5rem]" aria-label="copy content" >
+        <FormButton @click="handleCopyButtonClick" class="flex justify-center w-full sm:w-auto min-w-[5rem]"
+          aria-label="copy content">
 
           <transition enter-from-class="opacity-0" leave-to-class="opacity-0" mode="out-in"
             enter-active-class="transition duration-150" leave-active-class="transition duration-150 ">
@@ -35,6 +41,7 @@ import FormButton from "@/components/FormButton.vue";
 export interface Props {
   uuid?: string | undefined
 }
+
 const props = withDefaults(defineProps<Props>(), {})
 
 const spin = ref(false)
@@ -62,8 +69,7 @@ const handleCopyButtonClick = () => {
 
 
 
-</script>
-    
-<style></style>
 
+</script>
+  
 

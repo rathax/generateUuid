@@ -16,7 +16,7 @@
             </transition>
           </FormButton>
           <a href="https://github.com/rathax/generateUuid" target="_blank">
-            <FormButton @click="emit('darkModeToggled')" class="!py-1" variant="surface" aria-label="GitLab">
+            <FormButton class="!py-1" variant="surface" aria-label="GitLab">
               <div class="flex items-center tracking-wider">
                 <GitHubIcon class="inline mr-2 w-4 h-full " />GitLab
               </div>

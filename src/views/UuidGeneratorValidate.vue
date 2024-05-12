@@ -9,17 +9,19 @@
                 <FormButton @click="validateInput">Decode</FormButton>
             </div>
         </FormRow>
+        <Transition name="fade">
+            <div class="grid grid-cols-[1fr_2fr] text-lg gap-y-4  gap-x-2 mt-4	items-center mx-2" v-if="touched">
+                <div>Single Integer Value</div>
+                <div>{{ intValue }}</div>
+                <div>Version</div>
+                <div>{{ uuidVersion }}</div>
+                <div>Variant</div>
+                <div> {{ variant }}</div>
+                <div>Time (UUIDv1)</div>
+                <div>{{ uuidTimestamp }}</div>
+            </div>
+        </Transition>
 
-        <div class="grid grid-cols-[1fr_2fr] text-lg gap-y-4  gap-x-2 mt-4	items-center mx-2" v-if="touched">
-            <div>Single Integer Value</div>
-            <div>{{ intValue }}</div>
-            <div>Version</div>
-            <div>{{ uuidVersion }}</div>
-            <div>Variant</div>
-            <div> {{ variant }}</div>
-            <div>Time (UUIDv1)</div>
-            <div>{{ uuidTimestamp }}</div>
-        </div>
     </FormCard>
 </template>
     
@@ -54,7 +56,7 @@ const errorMessage = computed(() => {
 })
 
 const validateInput = () => {
-    touched.value = true;
+    touched.value = true
     IsValid.value = validate(uuid.value || "")
     intValue.value = "-"
     uuidVersion.value = "-"
@@ -62,7 +64,7 @@ const validateInput = () => {
     variant.value = "-"
 
     intValue.value = toBigInt(uuid.value)
-    uuidVersion.value =  IsValid.value ? version(uuid.value).toString() : "-"
+    uuidVersion.value = IsValid.value ? version(uuid.value).toString() : "-"
     uuidTimestamp.value = uuidVersion.value === "1" ? get_date_obj(uuid.value) : "-"
     const variantHax = "0x" + uuid.value[19]
     if (!uuid.value[19]) variant.value = "-"
@@ -73,7 +75,7 @@ const validateInput = () => {
     else if (variantHax <= "0xf") variant.value = 'unknown / invalid. Must end with "0"'
 }
 
-function toBigInt (uuid: string){
+function toBigInt(uuid: string) {
     try {
         return BigInt("0x" + uuid.replace(/-/g, "")).toString()
     } catch {

@@ -38,7 +38,7 @@ const router = useRouter()
 const { t } = useI18n();
 
 const name = ref("name")
-const nameSpace = ref(uuidv4())
+const nameSpace = ref(import.meta.env.SSR ? "" : uuidv4())
 const nameSpacevalid = ref<boolean | undefined>(undefined)
 const valueGuuidV3 = ref("")
 const valueGuuidV5 = ref("")

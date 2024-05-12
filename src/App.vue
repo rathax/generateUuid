@@ -14,14 +14,20 @@
 
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
 import PageHeader from "./views/layout/PageHeader.vue";
 import { ref } from "vue";
-const { t } = useI18n();
+import { useHead,  } from '@unhead/vue'
+useHead({
+  htmlAttrs: {lang: "en"}
+})
 
-  
+const getTheme = () => {
+  if (import.meta.env.SSR) return "dark"
+  return localStorage.getItem("theme") as 'dark' | 'light' ?? "dark"
+}
+const theme = ref<'dark' | 'light'>(getTheme())
 
-const theme = ref<'dark' | 'light'>(localStorage.getItem("theme") as 'dark' | 'light' ?? "dark")
+
 
 const toggleDarkMode = () => {
   if (theme.value === 'light') {

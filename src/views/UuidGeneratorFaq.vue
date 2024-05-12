@@ -77,7 +77,7 @@
 
         <AnchorHeading class="h3" tag="h3" text="When to use UUID version 1?" />
         <p class="paragraph">UUID version 1 is generated based on the current timestamp and node (usually the MAC address).
-            It's suitable forscenarios where time-based ordering is important, such as in distributed systems.</p>
+            It's suitable for scenarios where time-based ordering is important, such as in distributed systems.</p>
         <AnchorHeading class="h3" tag="h3" text="When to use UUID version 4?" />
         <p class="paragraph">UUID version 4 is generated using random or pseudo-random numbers. It's suitable for scenarios
             where uniqueness is more critical than time-based ordering.</p>
@@ -135,7 +135,7 @@
             information.</p>
 
         <AnchorHeading class="h3" tag="h3" text="Can I use UUIDs in URLs?" />
-        <p class="paragraph">Yes, UUIDs an be used in URLs. Normally, UUIDs do not require special URL encoding as they
+        <p class="paragraph">Yes, UUIDs can be used in URLs. Normally, UUIDs do not require special URL encoding as they
             consist of hexadecimal characters and hyphens, which are safe in URLs. UUIDs are not human-readable or
             memorable, which can be a downside in user-facing URLs. However, for machine-to-machine communication, this is
             not an issue.</p>

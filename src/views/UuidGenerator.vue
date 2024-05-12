@@ -70,7 +70,6 @@
 import { ref } from 'vue';
 import { v4 as uuidv4, v1 as uuidv1 } from 'uuid';
 
-import { useI18n } from "vue-i18n";
 import FormRadio from "@/components/FormRadio.vue";
 import FormTextArea from "@/components/FormTextArea.vue"
 import FormButton from '@/components/FormButton.vue';
@@ -83,13 +82,12 @@ import UuidGeneratorFaq from './UuidGeneratorFaq.vue';
 import AnchorHeading from '@/components/AnchorHeading.vue';
 
 
-const valueGuuidV1 = ref(import.meta.env.SSR ? " 00000000-0000-0000-0000-000000000000" : uuidv1())
-const valueGuuidV4 = ref(import.meta.env.SSR ? " 00000000-0000-0000-0000-000000000000" : uuidv4())
+const valueGuuidV1 = ref(import.meta.env.SSR ? "" : uuidv1())
+const valueGuuidV4 = ref(import.meta.env.SSR ? "" : uuidv4())
 
 const copyToClipboard = (string: string) => {
   navigator.clipboard.writeText(string);
 }
-
 
 const amountoGenerate = ref<number>(20)
 const typetoGenerate = ref<'V1' | "V4" | "Guid">("V1")
@@ -114,7 +112,6 @@ const getEncoding = () => {
   return (string: string) => atob(string)
 }
 
-
 const generateIds = () => {
   const type = getIdType()
   const encoding = getEncoding()
@@ -129,7 +126,6 @@ const generateIds = () => {
   else {
     generatedOutput.value = `[\n"${ids.join('",\n"')}"\n]`
   }
-
 }
 
 const copyButtonVariant = ref<'primary' | 'success'>('primary')
