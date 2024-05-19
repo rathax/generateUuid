@@ -29,15 +29,12 @@
 <script setup lang="ts">
 import { computed, ref, } from 'vue';
 import { validate, version } from 'uuid';
-import { useI18n } from "vue-i18n";
 
 import FormInput from '@/components/FormInput.vue';
 import FormCard from '@/components/FormCard.vue';
 import FormButton from '@/components/FormButton.vue';
 import FormRow from '@/components/FormRow.vue';
 import AnchorHeading from '@/components/AnchorHeading.vue';
-
-const { t } = useI18n();
 
 const uuid = ref<string>("")
 

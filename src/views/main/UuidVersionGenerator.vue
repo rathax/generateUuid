@@ -5,10 +5,7 @@
     <div
       class="flex flex-col sm:flex-row w-full justify-between items-center text-center px-4 md:px-8 py-3 border border-surface-border transition-all appearance-none rounded-md focus:outline-none focus:outline-offset-0  bg-surface-card shadow-sm shadow-surface-100 ">
       <div class=" text-2xl">
-        <span v-if="!uuid" class="text-transparent">984b94e7-2ac5-4e04-a887-1d9a7ec241e8</span>
-        <Transition v-else name="fade" appear>
-          <span>{{ props.uuid  }}</span>
-        </Transition>
+        <span :class="[{'text-transparent': !uuid }]">{{uuid ?? "00000000-0000-0000-0000-000000000000"}} </span>
       </div>
       <div class="flex gap-4 mt-4 sm:mt-0 l px-5 sm:px-0 w-full sm:w-auto">
         <FormButton @click="handleRefresh" class="flex justify-center w-full sm:w-auto " aria-label="refresh UUID">

@@ -25,17 +25,14 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { v4 as uuidv4, v3 as uuidv3, v5 as uuidv5 } from 'uuid';
-import { useI18n } from "vue-i18n";
 
 import FormInput from '@/components/FormInput.vue';
-import UuidVersionGenerator from '@/views/UuidVersionGenerator.vue';
+import UuidVersionGenerator from '@/views/main/UuidVersionGenerator.vue';
 import FormCard from '@/components/FormCard.vue';
 import { useRouter } from "vue-router"
 import AnchorHeading from '@/components/AnchorHeading.vue';
 
 const router = useRouter()
-
-const { t } = useI18n();
 
 const name = ref("name")
 const nameSpace = ref(import.meta.env.SSR ? "" : uuidv4())

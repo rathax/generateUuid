@@ -4,11 +4,11 @@
     <section>
       <UuidVersionGenerator :uuid="valueGuuidV4" @click:refresh="valueGuuidV4 = uuidv4()"
         @click:copy="copyToClipboard(valueGuuidV4)">
-        <AnchorHeading id="UUIDv4" class="text-2xl mb-5 text-center"  text="Version 4 (random) UUID:" />
+        <AnchorHeading id="UUIDv4" class="text-2xl mb-5 text-center" text="Version 4 (random) UUID:" />
       </UuidVersionGenerator>
-      <UuidVersionGenerator class="mt-14" :uuid="valueGuuidV1"
-        @click:refresh="valueGuuidV1 = uuidv1()" @click:copy="copyToClipboard(valueGuuidV1)">
-        <AnchorHeading id="UUIDv1" class="text-2xl mb-5 text-center"  text="Version 1 (timestamp) UUID:" />
+      <UuidVersionGenerator class="mt-14" :uuid="valueGuuidV1" @click:refresh="valueGuuidV1 = uuidv1()"
+        @click:copy="copyToClipboard(valueGuuidV1)">
+        <AnchorHeading id="UUIDv1" class="text-2xl mb-5 text-center" text="Version 1 (timestamp) UUID:" />
       </UuidVersionGenerator>
     </section>
 
@@ -20,18 +20,18 @@
       <FormCard class="mt-10 m-auto">
         <AnchorHeading id="Generate-Bulk" class="text-3xl text-center mb-10 mt-4" tag="h2" text="Generate Bulk" />
         <div class="mb-5">
-          <div class="flex gap-5 md:gap-10 items-center" role="radiogroup"  aria-labelledby="gc8Dz" >
+          <div class="flex gap-5 md:gap-10 items-center" role="radiogroup" aria-labelledby="gc8Dz">
             <label id="gc8Dz">Type:</label>
             <FormRadio v-model="typetoGenerate" label="Uuid V1" value="V1" />
             <FormRadio v-model="typetoGenerate" label="Uuid V4" value="V4" />
           </div>
           <div class="flex gap-5 md:gap-10 my-5 items-center" role="radiogroup" aria-labelledby="dc8ev">
-            <label  id="dc8ev">Format:</label>
+            <label id="dc8ev">Format:</label>
             <FormRadio label="plain text" value="plain-text" v-model="formateToGenrate" />
             <FormRadio label="JSON" value="json" v-model="formateToGenrate" />
             <FormRadio label="comma separated" value="comma-seperated" v-model="formateToGenrate" />
           </div>
-          <div class="flex gap-5 md:gap-10 my-5 items-center" role="radiogroup"  aria-labelledby="cMJ30">
+          <div class="flex gap-5 md:gap-10 my-5 items-center" role="radiogroup" aria-labelledby="cMJ30">
             <label id="cMJ30">Encoding:</label>
             <FormRadio label="plain" value="plain" v-model="encodingToGenerate" />
             <FormRadio label="Base64" value="base64" v-model="encodingToGenerate" />
@@ -74,12 +74,13 @@ import FormRadio from "@/components/FormRadio.vue";
 import FormTextArea from "@/components/FormTextArea.vue"
 import FormButton from '@/components/FormButton.vue';
 import FormInput from '@/components/FormInput.vue';
-import UuidVersionGenerator from '@/views/UuidVersionGenerator.vue';
+import UuidVersionGenerator from '@/views/main/UuidVersionGenerator.vue';
 import FormCard from '@/components/FormCard.vue';
 import UuidGeneratorNamespace from './UuidGeneratorNamespace.vue';
 import UuidGeneratorValidate from './UuidGeneratorValidate.vue'
 import UuidGeneratorFaq from './UuidGeneratorFaq.vue';
 import AnchorHeading from '@/components/AnchorHeading.vue';
+import { useHead } from '@unhead/vue';
 
 
 const valueGuuidV1 = ref(import.meta.env.SSR ? "" : uuidv1())
@@ -135,6 +136,88 @@ const copyGeneratedIds = () => {
     copyButtonVariant.value = 'primary'
   }, 1200)
 }
+
+
+
+const metaDescription = "Generate unique UUIDs. Whether you need single or bulk UUIDs. This tool offers timestamp extraction, QR code generation, and more."
+const metaTitle = "Generateuuid - Online UUID Generator for developers"
+const metaUrl = "https://generateuuid.net/"
+
+useHead({
+  title: metaTitle,
+  htmlAttrs: { lang: "en" },
+  meta: [
+    {
+      property: 'og:title',
+      content: metaTitle,
+    },
+    {
+      property: 'og:description',
+      content: metaDescription,
+    },
+    {
+      property: 'og:type',
+      content: "website",
+    },
+    {
+      property: 'og:url',
+      content: metaUrl,
+    },
+    {
+      property: 'og:image',
+      content: 'https://generateuuid.net/socialmedia.jpg',
+    },
+    {
+      name: 'twitter:title',
+      content: metaTitle,
+    },
+    {
+      name: 'twitter:description',
+      content: metaDescription,
+    },
+    {
+      name: 'twitter:url',
+      content: metaUrl,
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://generateuuid.net/socialmedia.jpg'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      name: 'keywords',
+      content: 'generate uuid online, generate uuid, uuid generator, bulk uuid generation, uuid customization, online uuid tool, add free uuid generator, generate uuid net'
+    },
+  ],
+  link: [{ rel: "canonical", href: metaUrl }],
+  script: [{
+    type: "application/ld+json", textContent: JSON.stringify([{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": metaUrl,
+      "name": "Generateuuid",
+      "alternateName": ["uuid generator", "generate uuid"],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "url": metaUrl,
+      "name": "Generateuuid",
+      "applicationCategory": "DeveloperApplication",
+      "browserRequirements": "Requires modern web browser",
+      "operatingSystem": "All",
+      "softwareHelp": "https://github.com/rathax/generateUuid",
+      "featureList": "https://github.com/rathax/generateUuid/blob/main/README.md#key-features",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }])
+  }]
+})
 
 </script>
 <style></style>

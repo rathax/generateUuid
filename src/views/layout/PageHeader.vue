@@ -1,11 +1,11 @@
 
 <template>
-  <div class="px-5 sm:px-20 m-auto h-16 bg-surface-card border-b border-surface-border">
+  <div class="px-5 sm:px-20 h-16 bg-surface-card border-b border-surface-border">
     <div class="flex divide-x py-3 items-center h-full font-semibold max-w-4xl m-auto">
       <div class="flex justify-between w-full items-center">
-        <h1 class="text-2xl">Generate UUIDs</h1>
-
-
+        <router-link to="/">
+          <h1 class="text-2xl">Generate UUIDs</h1>
+        </router-link>
         <div class="flex items-center gap-4">
           <FormButton @click="emit('darkModeToggled')" class="!p-1" variant="surface"
             :aria-label="darkmode ? 'switch to dark mode' : 'switch to light mode'">
@@ -15,16 +15,14 @@
               <LightModeIcon v-else class="w-6 h-full fill-surface-900" />
             </transition>
           </FormButton>
-          <a href="https://github.com/rathax/generateUuid" target="_blank">
-            <FormButton class="!py-1" variant="surface" aria-label="GitLab">
+          <a href="https://github.com/rathax/generateUuid" target="_blank" rel="nofollow">
+            <FormButton class="!py-1" variant="surface" aria-label="GitHub">
               <div class="flex items-center tracking-wider">
-                <GitHubIcon class="inline mr-2 w-4 h-full " />GitLab
+                <GitHubIcon class="inline mr-2 w-4 h-full " />GitHub
               </div>
             </FormButton>
           </a>
-
         </div>
-
       </div>
     </div>
   </div>

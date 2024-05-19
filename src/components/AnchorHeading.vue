@@ -2,8 +2,7 @@
 <template>
   <component :is="tag" class="font-bold  hover:cursor-pointer group" :id="id">
     <RouterLink :to="{hash: '#' + id}"> <span
-        class="transition-all duration-200 opacity-0 group-hover:opacity-100 inline-block before:content-['#'] before:mr-1 -ml-5 text-green-500 font-semibold"></span>
-      {{ text }}</RouterLink>
+        class="transition-all duration-200 opacity-0 group-hover:opacity-100 inline-block before:content-['#'] before:mr-1 -ml-4 text-green-500 font-semibold"></span>{{ text }}</RouterLink>
   </component>
 </template>
     
@@ -14,7 +13,7 @@ import { computed, withDefaults } from "vue";
 export interface Props {
   text: string
   id?: string
-  tag?: "h2" | "h3"
+  tag?: "h1" | "h2" | "h3"
 }
 
 const props = withDefaults(defineProps<Props>(), { tag: "h2" })
