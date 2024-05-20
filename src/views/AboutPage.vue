@@ -17,7 +17,7 @@
             <div class="flex justify-center mt-10">
                 <div class="flex flex-col gap-5">
                     <div class="text-center text-xl">ratHax</div>
-                    <img width="200" src="/rathax.jpg" alt="RatHax" />
+                    <img width="200" src="@/assets/rathax.jpg" alt="RatHax" />
                 </div>
             </div>
         </section>
@@ -94,6 +94,7 @@ useHead({
             "inLanguage": "en-US",
             },
         {
+            "@context": "https://schema.org",
             "@type": ["Person", "Organization"],
             "@id": "https://generateuuid.net/about",
             "name": "RatHax",

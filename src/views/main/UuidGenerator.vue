@@ -218,6 +218,7 @@ useHead({
       }
     },
     {
+      "@context": "https://schema.org",
       "@type": ["Person", "Organization"],
       "@id": "https://generateuuid.net/about",
       "name": "RatHax",
