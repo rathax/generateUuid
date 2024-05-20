@@ -10,14 +10,14 @@
             </p>
             <p class="paragraph text-center mt-10 text-xl">
                 Are you curious about this app, its tech stack, our privacy policies, or anything else? Do you have any
-                feedback, leave me an email at <a href="mailto: contact@generateuuid.net"
-                    class="font-bold">contact@generateuuid.net</a> or visit the<a
+                feedback, leave me an email at <a href="mailto: rathaxdev@gmail.com"
+                    class="font-bold">rathaxdev@gmail.com</a> or visit the<a
                     href="https://github.com/rathax/generateUuid" target="_blank">GitHub Project. </a>
             </p>
             <div class="flex justify-center mt-10">
                 <div class="flex flex-col gap-5">
                     <div class="text-center text-xl">ratHax</div>
-                    <img width="200" src="@/assets/rathax.jpg" alt="RatHax" />
+                    <img width="200" src="/rathax.jpg" alt="RatHax" />
                 </div>
             </div>
         </section>
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
 
-const metaDescription = "Do you have any feedback, leave me an email at contact@generateuuid.net"
+const metaDescription = "Do you have any feedback, leave me an email at rathaxdev@gmail.com"
 const metaTitle = "Generateuuid - About"
 const metaUrl = "https://generateuuid.net/about"
 useHead({
@@ -98,7 +98,7 @@ useHead({
             "@type": ["Person", "Organization"],
             "@id": "https://generateuuid.net/about",
             "name": "RatHax",
-            "email": "contact@generateuuid.net",
+            "email": "rathaxdev@gmail.com",
             "image": {
                 "@type": "ImageObject",
                 "inLanguage": "en-US",
@@ -106,7 +106,7 @@ useHead({
                 "url": "https://generateuuid.net/rathax.jpg",
                 "contentUrl": "https://generateuuid.net/rathax.jpg",
                 "width": 435,
-                "height": 843,
+                "height": 835,
                 "caption": "RatHax"
             },
             "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },

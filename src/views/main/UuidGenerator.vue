@@ -222,7 +222,7 @@ useHead({
       "@type": ["Person", "Organization"],
       "@id": "https://generateuuid.net/about",
       "name": "RatHax",
-      "email": "contact@generateuuid.net",
+      "email": "rathaxdev@gmail.com",
       "image": {
         "@type": "ImageObject",
         "inLanguage": "en-US",
@@ -230,7 +230,7 @@ useHead({
         "url": "https://generateuuid.net/rathax.jpg",
         "contentUrl": "https://generateuuid.net/rathax.jpg",
         "width": 435,
-        "height": 843,
+        "height": 835,
         "caption": "RatHax"
       },
       "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },

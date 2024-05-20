@@ -5,7 +5,7 @@
 
         <section class="px-8 lg:px-0 transition-[padding] duration-200 my-10">
             <h2 class="text-3xl font-bold text-center">Contact</h2>
-            <p class="paragraph text-center mt-10 text-xl"> If you want to reach me, leave me an email at <a href= "mailto: contact@generateuuid.net" class="font-bold">contact@generateuuid.net</a>.
+            <p class="paragraph text-center mt-10 text-xl"> If you want to reach me, leave me an email at <a href= "mailto: rathaxdev@gmail.com" class="font-bold">rathaxdev@gmail.com</a>.
             </p>
         </section>
     </div>
@@ -15,7 +15,7 @@
 import { useHead } from "@unhead/vue";
 
 
-const metaDescription = "If you want to reach me, leave me an email at contact@generateuuid.net"
+const metaDescription = "If you want to reach me, leave me an email at rathaxdev@gmail.com"
 const metaTitle = "Generateuuid - Contact"
 const metaUrl = "https://generateuuid.net/contact"
 useHead({
@@ -85,7 +85,7 @@ useHead({
             "@type": ["Person", "Organization"],
             "@id": "https://generateuuid.net/about",
             "name": "RatHax",
-            "email": "contact@generateuuid.net",
+            "email": "rathaxdev@gmail.com",
             "image": {
                 "@type": "ImageObject",
                 "inLanguage": "en-US",
@@ -93,7 +93,7 @@ useHead({
                 "url": "https://generateuuid.net/rathax.jpg",
                 "contentUrl": "https://generateuuid.net/rathax.jpg",
                 "width": 435,
-                "height": 843,
+                "height": 835,
                 "caption": "RatHax"
             },
             "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
