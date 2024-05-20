@@ -4,7 +4,7 @@
 
 
         <section class="px-8 lg:px-0 transition-[padding] duration-200 my-10">
-            <h1 class="text-3xl font-bold text-center">Contact</h1>
+            <h2 class="text-3xl font-bold text-center">Contact</h2>
             <p class="paragraph text-center mt-10 text-xl"> If you want to reach me, leave me an email at <a href= "mailto: contact@generateuuid.net" class="font-bold">contact@generateuuid.net</a>.
             </p>
         </section>
@@ -12,10 +12,6 @@
 </template>
       
 <script setup lang="ts">
-import { ref, computed, nextTick } from "vue";
-import RefreshIcon from "@/assets/refresh-icon.svg?component"
-import CheckIcon from "@/assets/check-icon.svg?component"
-import AnchorHeading from "@/components/AnchorHeading.vue";
 import { useHead } from "@unhead/vue";
 
 
@@ -70,8 +66,45 @@ useHead({
       name: 'keywords',
       content: 'generateuuid contact, generateuuid.net contact'
     },
+    {
+            name: 'description',
+            content: metaDescription,
+    },
   ],
   link: [{ rel: "canonical", href: metaUrl }],
+  script: [{
+        type: "application/ld+json", textContent: JSON.stringify([{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": metaUrl,
+            "name": "GenerateUUID - Contact",
+            "inLanguage": "en-US",
+            },
+        {
+            "@type": ["Person", "Organization"],
+            "@id": "https://generateuuid.net/about",
+            "name": "RatHax",
+            "email": "contact@generateuuid.net",
+            "image": {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "https://generateuuid.net/#/schema/person/image/",
+                "url": "https://generateuuid.net/rathax.jpg",
+                "contentUrl": "https://generateuuid.net/rathax.jpg",
+                "width": 435,
+                "height": 843,
+                "caption": "RatHax"
+            },
+            "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
+            "sameAs": [
+                "https://generateuuid.net",
+                "https://x.com/godlikeplayer1",
+                "https://www.reddit.com/user/godlikeplayer2",
+                "https://github.com/rathax"
+            ]
+        }
+        ])
+    }]
 })
 
 

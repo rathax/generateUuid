@@ -4,7 +4,7 @@
 
 
         <section class="px-8 lg:px-0 transition-[padding] duration-200 my-10">
-            <h1 class="text-3xl font-bold text-center">About</h1>
+            <h2 class="text-3xl font-bold text-center">About</h2>
             <p class="paragraph text-center mt-10 text-xl"> This simple UUID Generator was made as a portfolio site and runs
                 completely inside the browser and does not need a backend and should stay online permanently without Ads.
             </p>
@@ -17,7 +17,7 @@
             <div class="flex justify-center mt-10">
                 <div class="flex flex-col gap-5">
                     <div class="text-center text-xl">ratHax</div>
-                    <img  class="h-64 w-auto" src="/rathax.jpg" />
+                    <img width="200" src="/rathax.jpg" alt="RatHax" />
                 </div>
             </div>
         </section>
@@ -79,13 +79,46 @@ useHead({
             name: 'keywords',
             content: 'generateuuid about, generateuuid.net about, uuidgenerator'
         },
+        {
+            name: 'description',
+            content: metaDescription,
+        },
     ],
     link: [{ rel: "canonical", href: metaUrl }],
+    script: [{
+        type: "application/ld+json", textContent: JSON.stringify([{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": metaUrl,
+            "name": "GenerateUUID - About",
+            "inLanguage": "en-US",
+            },
+        {
+            "@type": ["Person", "Organization"],
+            "@id": "https://generateuuid.net/about",
+            "name": "RatHax",
+            "email": "contact@generateuuid.net",
+            "image": {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "https://generateuuid.net/#/schema/person/image/",
+                "url": "https://generateuuid.net/rathax.jpg",
+                "contentUrl": "https://generateuuid.net/rathax.jpg",
+                "width": 435,
+                "height": 843,
+                "caption": "RatHax"
+            },
+            "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
+            "sameAs": [
+                "https://generateuuid.net",
+                "https://x.com/godlikeplayer1",
+                "https://www.reddit.com/user/godlikeplayer2",
+                "https://github.com/rathax"
+            ]
+        }
+        ])
+    }]
 })
-
-
-
 </script>
     
-  
   
