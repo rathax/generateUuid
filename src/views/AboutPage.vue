@@ -11,12 +11,11 @@
             <p class="paragraph text-center mt-10 text-xl">
                 Are you curious about this app, its tech stack, our privacy policies, or anything else? Do you have any
                 feedback, leave me an email at <a href="mailto: rathaxdev@gmail.com"
-                    class="font-bold">rathaxdev@gmail.com</a> or visit the<a
-                    href="https://github.com/rathax/generateUuid" target="_blank">GitHub Project. </a>
+                    class="font-bold">rathaxdev@gmail.com</a> or visit the <a
+                    href="https://github.com/rathax/generateUuid" target="_blank">GitHub Project.</a>
             </p>
             <div class="flex justify-center mt-10">
                 <div class="flex flex-col gap-5">
-                    <div class="text-center text-xl">ratHax</div>
                     <img width="200" src="/rathax.jpg" alt="RatHax" />
                 </div>
             </div>
