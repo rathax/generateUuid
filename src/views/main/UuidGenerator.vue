@@ -193,56 +193,6 @@ useHead({
     },
   ],
   link: [{ rel: "canonical", href: metaUrl }],
-  script: [{
-    type: "application/ld+json", textContent: JSON.stringify([{
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": metaUrl,
-      "name": "GenerateUUID",
-      "inLanguage": "en-US",
-      "alternateName": ["UUID Generator"],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "url": metaUrl,
-      "name": "GenerateUUID",
-      "applicationCategory": "DeveloperApplication",
-      "browserRequirements": "Requires modern web browser",
-      "operatingSystem": "All",
-      "softwareHelp": "https://github.com/rathax/generateUuid",
-      "featureList": "https://github.com/rathax/generateUuid/blob/main/README.md#key-features",
-      "offers": {
-        "@type": "Offer",
-        "price": "0"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": ["Person", "Organization"],
-      "@id": "https://generateuuid.net/about",
-      "name": "RatHax",
-      "email": "rathaxdev@gmail.com",
-      "image": {
-        "@type": "ImageObject",
-        "inLanguage": "en-US",
-        "@id": "https://generateuuid.net/#/schema/person/image/",
-        "url": "https://generateuuid.net/rathax.jpg",
-        "contentUrl": "https://generateuuid.net/rathax.jpg",
-        "width": 435,
-        "height": 835,
-        "caption": "RatHax"
-      },
-      "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
-      "sameAs": [
-        "https://generateuuid.net",
-        "https://x.com/godlikeplayer1",
-        "https://www.reddit.com/user/godlikeplayer2",
-        "https://github.com/rathax"
-      ]
-    }
-    ])
-  }]
 })
 
 </script>

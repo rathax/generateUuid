@@ -126,7 +126,7 @@ useHead({
       "@type": "WebSite",
       "url": metaUrl,
       "name": "GenerateUUID - Privacy",
-      "inLanguage": "en-US",
+      "inLanguage": "en-US"
     },
     ])
   }]

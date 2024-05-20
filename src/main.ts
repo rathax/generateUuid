@@ -54,9 +54,9 @@ export const createApp: any = ViteSSG(
   }
 )
 
-// export async function includedRoutes() {
+ export async function includedRoutes() {
   // Sensitive key is managed by Vite - this would not be available inside
   // vite.config.js as it runs before the environment has been populated.
 
  // return SUPPORT_LOCALES.map((val) => '/' + val).concat(['/'])
-//}
+}

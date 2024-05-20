@@ -91,7 +91,7 @@ useHead({
             "@type": "WebSite",
             "url": metaUrl,
             "name": "GenerateUUID - About",
-            "inLanguage": "en-US",
+            "inLanguage": "en-US"
             },
         {
             "@context": "https://schema.org",
@@ -106,7 +106,7 @@ useHead({
                 "url": "https://generateuuid.net/rathax.jpg",
                 "contentUrl": "https://generateuuid.net/rathax.jpg",
                 "width": 435,
-                "height": 835,
+                "height": 843,
                 "caption": "RatHax"
             },
             "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
