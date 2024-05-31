@@ -1,45 +1,75 @@
-# [Generateuuid.net](https://generateuuid.net)
+# Nuxt 3 Minimal Starter
 
-This is a simple app built with Vue + Tailwind + vite + vite-ssg - vite-pwa that that randomly generates UUIDs (universally unique identifier) for developers to copy and paste.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Key Features
-* UUID generator for Version 1, Version 3, Version 4 and Version 5
-* Define Namespace and Name for Version 3 and Version 5 UUIDs
-* Validate UUIDs
-* Darkmode
-* 100% Lighthouse score
+## Setup
 
+Make sure to install the dependencies:
 
-<div align="center">
-https://generateuuid.net
-</div>
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-
-## Project Setup
-
-```sh
+```bash
+# npm
 npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-### Compile and Hot-Reload for Development
+## Development Server
 
-```sh
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
 npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Production
 
-```sh
+Build the application for production:
+
+```bash
+# npm
 npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
+Locally preview production build:
 
-### Lint with [ESLint](https://eslint.org/)
+```bash
+# npm
+npm run preview
 
-```sh
-npm run lint
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
