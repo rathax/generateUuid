@@ -6,7 +6,7 @@
     
 <script setup lang="ts">
 const metaDescription = "Generate unique UUIDs. Whether you need single or bulk UUIDs. This tool offers timestamp extraction, QR code generation, and more."
-const metaTitle = "Generate UUID - Online UUID Generator for developers"
+const metaTitle = "Generate UUID Tool- Online UUID Generator for developers"
 const metaUrl = "https://generateuuid.net/"
 
 useHead({
@@ -59,7 +59,7 @@ useHead({
     },
     {
       name: 'keywords',
-      content: 'generate uuid online, generate uuid, uuid generator, bulk uuid generation, uuid customization, online uuid tool, add free uuid generator, generate uuid net'
+      content: 'generate uuid online, generate uuid, uuid generator, uuid customization, online uuid tool, free uuid generator, generate uuid net'
     },
   ],
   link: [{ rel: "canonical", href: metaUrl }],
