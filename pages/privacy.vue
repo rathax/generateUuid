@@ -61,6 +61,7 @@
 <script setup lang="ts">
 import AnchorHeading from "@/components/FormAnchorHeading.vue";
 import { useHead } from "@unhead/vue";
+import defaultJsonLd from "~/utils/defaultJsonLd";
 
 
 const metaDescription = "Privacy policy for generateuuid.net"
@@ -121,13 +122,7 @@ useHead({
   ],
   link: [{ rel: "canonical", href: metaUrl }],
   script: [{
-    type: "application/ld+json", textContent: JSON.stringify([{
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": metaUrl,
-      "name": "GenerateUUID - Privacy",
-      "inLanguage": "en-US"
-    },
+    type: "application/ld+json", innerHTML: JSON.stringify([...defaultJsonLd
     ])
   }]
 })

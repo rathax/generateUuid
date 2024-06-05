@@ -5,6 +5,8 @@
 
         <section class="px-8 lg:px-0 transition-[padding] duration-200 my-10">
             <h2 class="text-3xl font-bold text-center">About</h2>
+            <p class="paragraph text-center mt-10 text-xl">Hello, my name is ratHax, and I'm a Swiss software engineer with a master’s degree in computer science that loves to write web apps like this one in his free time.
+            </p>
             <p class="paragraph text-center mt-10 text-xl"> This simple UUID Generator was made as a portfolio site and runs
                 completely inside the browser and does not need a backend and should stay online permanently without Ads.
             </p>
@@ -24,8 +26,9 @@
 </template>
       
       
-<script setup lang="ts">
+<script setup lang="ts">1
 import { useHead } from "@unhead/vue";
+import defaultJsonLd from "~/utils/defaultJsonLd";
 
 const metaDescription = "Do you have any feedback, leave me an email at rathaxdev@gmail.com"
 const metaTitle = "Generateuuid - About"
@@ -85,37 +88,7 @@ useHead({
     ],
     link: [{ rel: "canonical", href: metaUrl }],
     script: [{
-        type: "application/ld+json", textContent: JSON.stringify([{
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "url": metaUrl,
-            "name": "Generate UUID - About",
-            "inLanguage": "en-US"
-            },
-        {
-            "@context": "https://schema.org",
-            "@type": ["Person", "Organization"],
-            "@id": "https://generateuuid.net/about",
-            "name": "RatHax",
-            "email": "rathaxdev@gmail.com",
-            "image": {
-                "@type": "ImageObject",
-                "inLanguage": "en-US",
-                "@id": "https://generateuuid.net/#/schema/person/image/",
-                "url": "https://generateuuid.net/rathax.jpg",
-                "contentUrl": "https://generateuuid.net/rathax.jpg",
-                "width": 435,
-                "height": 843,
-                "caption": "RatHax"
-            },
-            "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
-            "sameAs": [
-                "https://generateuuid.net",
-                "https://x.com/godlikeplayer1",
-                "https://www.reddit.com/user/godlikeplayer2",
-                "https://github.com/rathax"
-            ]
-        }
+        type: "application/ld+json", innerHTML: JSON.stringify([...defaultJsonLd
         ])
     }]
 })

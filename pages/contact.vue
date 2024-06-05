@@ -1,18 +1,20 @@
 
 <template>
-    <div class="mx-auto flex flex-col items-center max-w-[48rem]">
+  <div class="mx-auto flex flex-col items-center max-w-[48rem]">
 
 
-        <section class="px-8 lg:px-0 transition-[padding] duration-200 my-10">
-            <h2 class="text-3xl font-bold text-center">Contact</h2>
-            <p class="paragraph text-center mt-10 text-xl"> If you want to reach me, leave me an email at <a href= "mailto: rathaxdev@gmail.com" class="font-bold">rathaxdev@gmail.com</a>.
-            </p>
-        </section>
-    </div>
+    <section class="px-8 lg:px-0 transition-[padding] duration-200 my-10">
+      <h2 class="text-3xl font-bold text-center">Contact</h2>
+      <p class="paragraph text-center mt-10 text-xl"> If you want to reach me, leave me an email at <a
+          href="mailto: rathaxdev@gmail.com" class="font-bold">rathaxdev@gmail.com</a>.
+      </p>
+    </section>
+  </div>
 </template>
       
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
+import defaultJsonLd from "~/utils/defaultJsonLd";
 
 
 const metaDescription = "If you want to reach me, leave me an email at rathaxdev@gmail.com"
@@ -67,45 +69,15 @@ useHead({
       content: 'generateuuid contact, generateuuid.net contact'
     },
     {
-            name: 'description',
-            content: metaDescription,
+      name: 'description',
+      content: metaDescription,
     },
   ],
   link: [{ rel: "canonical", href: metaUrl }],
   script: [{
-        type: "application/ld+json", textContent: JSON.stringify([{
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "url": metaUrl,
-            "name": "GenerateUUID - Contact",
-            "inLanguage": "en-US"
-            },
-        {
-            "@context": "https://schema.org",
-            "@type": ["Person", "Organization"],
-            "@id": "https://generateuuid.net/about",
-            "name": "RatHax",
-            "email": "rathaxdev@gmail.com",
-            "image": {
-                "@type": "ImageObject",
-                "inLanguage": "en-US",
-                "@id": "https://generateuuid.net/#/schema/person/image/",
-                "url": "https://generateuuid.net/rathax.jpg",
-                "contentUrl": "https://generateuuid.net/rathax.jpg",
-                "width": 435,
-                "height": 843,
-                "caption": "RatHax"
-            },
-            "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
-            "sameAs": [
-                "https://generateuuid.net",
-                "https://x.com/godlikeplayer1",
-                "https://www.reddit.com/user/godlikeplayer2",
-                "https://github.com/rathax"
-            ]
-        }
-        ])
-    }]
+    type: "application/ld+json", innerHTML: JSON.stringify([...defaultJsonLd
+    ])
+  }]
 })
 
 

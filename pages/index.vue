@@ -5,8 +5,10 @@
     
     
 <script setup lang="ts">
+import defaultJsonLd from '~/utils/defaultJsonLd';
+
 const metaDescription = "Generate unique UUIDs. Whether you need single or bulk UUIDs. This tool offers timestamp extraction, QR code generation, and more."
-const metaTitle = "Generate UUID Tool- Online UUID Generator for developers"
+const metaTitle = "Generate UUID Tool - Online UUID Generator for developers"
 const metaUrl = "https://generateuuid.net/"
 
 useHead({
@@ -64,13 +66,8 @@ useHead({
   ],
   link: [{ rel: "canonical", href: metaUrl }],
   script: [{
-    type: "application/ld+json", textContent: JSON.stringify([{
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": metaUrl,
-      "name": "GenerateUUID - Contact",
-      "inLanguage": "en-US"
-    },
+    type: "application/ld+json", innerHTML: JSON.stringify([
+    ...defaultJsonLd,
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
@@ -85,7 +82,7 @@ useHead({
         "@type": "Offer",
         "price": "0"
       }
-    }
+    },
     ])
   }]
 })
