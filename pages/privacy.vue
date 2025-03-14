@@ -60,7 +60,7 @@
       
 <script setup lang="ts">
 import AnchorHeading from "@/components/FormAnchorHeading.vue";
-import { useHead } from "@unhead/vue";
+import { useHead } from "#imports";
 import defaultJsonLd from "~/utils/defaultJsonLd";
 
 

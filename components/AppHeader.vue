@@ -7,7 +7,7 @@
             <h1 class="text-2xl">Generate UUID</h1>
           </nuxt-link>
           <div class="flex items-center gap-4">
-            <FormButton @click="emit('darkModeToggled')" class="!p-1 w-8 h-8 " variant="surface"
+            <FormButton @click="emit('darkModeToggled')" class="p-1! w-8 h-8 " variant="surface"
               :aria-label="darkmode ? 'switch to dark mode' : 'switch to light mode'">
               <transition enter-from-class="opacity-0" leave-to-class="opacity-0" mode="out-in"
                 enter-active-class="transition duration-200" leave-active-class="transition duration-200 ">
@@ -16,7 +16,7 @@
               </transition>
             </FormButton>
             <a href="https://github.com/rathax/generateUuid" target="_blank" rel="nofollow">
-              <FormButton class="!py-1" variant="surface" aria-label="GitHub">
+              <FormButton class="py-1!" variant="surface" aria-label="GitHub">
                 <div class="flex items-center tracking-wider">
                   <GitHubIcon class="inline mr-2 w-4 h-full " />GitHub
                 </div>

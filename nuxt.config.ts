@@ -2,17 +2,19 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
+
   router: {
     options: {
       strict: false,
     },
   },
+
   postcss: {
     plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+      "@tailwindcss/postcss": {},
     },
   },
+
   nuxtIcon: {
     size: "24px", // default <Icon> size applied
     class: "wtf", // default <Icon> class applied
@@ -20,5 +22,7 @@ export default defineNuxtConfig({
       nuxt: "",
     },
   },
+
   modules: ["nuxt-svgo"],
+  compatibilityDate: "2025-03-14",
 });

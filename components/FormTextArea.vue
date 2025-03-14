@@ -1,7 +1,7 @@
 
 <template>
     <textarea aria-label="text" 
-        class="px-3 py-2 rounded border border-surface-border outline-0 focus:ring-[3px] ring-primary border-r-2 transition-shadow duration-150  focus:border-primary-500] w-full bg-surface-0"
+        class="px-3 py-2 rounded-sm border border-surface-border outline-0 focus:ring-[3px] ring-primary border-r-2 transition-shadow duration-150  focus:border-primary-500] w-full bg-surface-0"
         v-model="value"></textarea>
 </template>
     

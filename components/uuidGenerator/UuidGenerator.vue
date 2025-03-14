@@ -1,4 +1,3 @@
-
 <template>
   <div class="m-auto mt-40">
     <section>
@@ -6,9 +5,9 @@
         @click:copy="copyToClipboard(valueGuuidV4)">
         <AnchorHeading id="UUIDv4" class="text-2xl mb-5 text-center" text="Version 4 (random) UUID:" />
       </UuidVersionGenerator>
-      <UuidVersionGenerator class="mt-14" :uuid="valueGuuidV1" @click:refresh="valueGuuidV1 = uuidv1()"
-        @click:copy="copyToClipboard(valueGuuidV1)">
-        <AnchorHeading id="UUIDv1" class="text-2xl mb-5 text-center" text="Version 1 (timestamp) UUID:" />
+      <UuidVersionGenerator class="mt-14" :uuid="valueGuuidV7" @click:refresh="valueGuuidV7 = uuidv7()"
+        @click:copy="copyToClipboard(valueGuuidV7)">
+        <AnchorHeading id="UUIDv7" class="text-2xl mb-5 text-center" text="Version 7 (time-ordered) UUID:" />
       </UuidVersionGenerator>
     </section>
 
@@ -16,25 +15,25 @@
 
     <section class="max-w-4xl m-auto mb-28">
       <UuidGeneratorNamespace class="" />
-      <UuidGeneratorValidate class="mt-10"></UuidGeneratorValidate>
+      <UuidGeneratorValidate cla ss="mt-10"></UuidGeneratorValidate>
       <FormCard class="mt-10 m-auto">
         <AnchorHeading id="Generate-Bulk" class="text-3xl text-center mb-10 mt-4" tag="h2" text="Generate Bulk" />
         <div class="mb-5">
           <div class="flex gap-5 md:gap-10 items-center" role="radiogroup" aria-labelledby="gc8Dz">
             <label id="gc8Dz">Type:</label>
-            <FormRadio v-model="typetoGenerate" label="Uuid V1" value="V1" id="dv8gfh"/>
-            <FormRadio v-model="typetoGenerate" label="Uuid V4" value="V4" id="dcghdD"/>
+            <FormRadio v-model="typetoGenerate" label="Uuid V1" value="V1" id="dv8gfh" />
+            <FormRadio v-model="typetoGenerate" label="Uuid V4" value="V4" id="dcghdD" />
           </div>
           <div class="flex gap-5 md:gap-10 my-5 items-center" role="radiogroup" aria-labelledby="dc8ev">
             <label id="dc8ev">Format:</label>
             <FormRadio label="plain text" value="plain-text" v-model="formateToGenrate" id="Clg7e" />
             <FormRadio label="JSON" value="json" v-model="formateToGenrate" id="dClo9g" />
-            <FormRadio label="comma separated" value="comma-seperated" v-model="formateToGenrate" id="dclg8"  />
+            <FormRadio label="comma separated" value="comma-seperated" v-model="formateToGenrate" id="dclg8" />
           </div>
           <div class="flex gap-5 md:gap-10 my-5 items-center" role="radiogroup" aria-labelledby="cMJ30">
             <label id="cMJ30">Encoding:</label>
             <FormRadio label="plain" value="plain" v-model="encodingToGenerate" id="dc8dl" />
-            <FormRadio label="Base64" value="base64" v-model="encodingToGenerate"  id="vbasd2"/>
+            <FormRadio label="Base64" value="base64" v-model="encodingToGenerate" id="vbasd2" />
           </div>
         </div>
         <div class="my-2 flex gap-4 items-center mb-3" role="radiogroup">
@@ -42,9 +41,9 @@
           <FormInput id="ucl8g" v-model.number="amountoGenerate" @blur="setMaxAmount" type="number" class="w-32"
             placeholder="max 50000"></FormInput>
 
-          <FormButton @click="generateIds"> Generate</FormButton>
+          <FormButton @click="generateIds">Generate</FormButton>
         </div>
-        <div class="relative ">
+        <div class="relative">
           <div class="absolute right-7 top-3">
             <FormButton v-if="generatedOutput.length >= 1" :variant="copyButtonVariant" @click="copyGeneratedIds"
               class="min-w-[12rem]">
@@ -58,17 +57,25 @@
           <FormTextArea rows="10" v-model="generatedOutput" readonly />
         </div>
       </FormCard>
+
     </section>
+
   </div>
-  <div class="bg-surface-card py-28 ">
+
+
+  <div class="bg-surface-card pt-28 pb-14">
+
     <UuidGeneratorFaq class="max-w-4xl mx-auto" />
+    <div class="flex self-center justify-center mt-14">
+        <img src="/originalIcon512.png" alt="Geneate UUID Logo" width="128"/>
+      </div>
   </div>
 </template>
-  
-  
+
+
 <script setup lang="ts">
 import { ref } from 'vue';
-import { v4 as uuidv4, v1 as uuidv1 } from 'uuid';
+import { v4 as uuidv4, v1 as uuidv1, v7 as uuidv7 } from 'uuid';
 
 import FormRadio from "@/components/FormRadio.vue";
 import FormTextArea from "@/components/FormTextArea.vue"
@@ -83,7 +90,7 @@ import AnchorHeading from '@/components/FormAnchorHeading.vue';
 import { useHead } from '@unhead/vue';
 
 
-const valueGuuidV1 = ref(uuidv1())
+const valueGuuidV7 = ref(uuidv7())
 const valueGuuidV4 = ref(uuidv4())
 
 const copyToClipboard = (string: string) => {
@@ -97,7 +104,7 @@ const encodingToGenerate = ref<'plain' | "base64" | "base64Url">("plain")
 
 const generatedOutput = ref("")
 const setMaxAmount = () => {
-  console.log("blur")
+  console.log("blur-sm")
   if (amountoGenerate.value > 50000) amountoGenerate.value = 50000
 }
 

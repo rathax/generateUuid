@@ -1,8 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-[data-theme='dark'] {
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  [data-theme='dark'] {
     --primary-900: #f5f9ff;
     --primary-800: #d0e1fd;
     --primary-700: #abc9fb;
@@ -13,7 +32,7 @@
     --primary-200: #295bac;
     --primary-100: #204887;
     --primary-50: #183462;
-  
+
     /* --primary-900:  #f3fbfd;
     --primary-800:  #c3edf5;
     --primary-700:  #94e0ed;
@@ -24,7 +43,7 @@
     --primary-200:  #010202;
     --primary-100:  #036475;
     --primary-50:  #024955; */
-  
+
     -cyan-50: #f3fbfd;
     --cyan-100: #c3edf5;
     --cyan-200: #94e0ed;
@@ -35,7 +54,7 @@
     --cyan-700: #010202;
     --cyan-800: #036475;
     --cyan-900: #024955;
-  
+
     --success-50: #f4fcf7;
     --success-100: #caf1d8;
     --success-200: #a0e6ba;
@@ -46,7 +65,7 @@
     --success-700: #188a42;
     --success-800: #136c34;
     --success-900: #0e4f26;
-  
+
     --error-50: #fff5f5;
     --error-100: #ffd0ce;
     --error-200: #ffaca7;
@@ -57,7 +76,7 @@
     --error-700: #b32b23;
     --error-800: #8c221c;
     --error-900: #661814;
-  
+
     --warn-50: #fefbf3;
     --warn-100: #faedc4;
     --warn-200: #f6de95;
@@ -68,7 +87,7 @@
     --warn-700: #a47d06;
     --warn-800: #816204;
     --warn-900: #5e4803;
-  
+
     --surface-0: #111827;
     --surface-50: #1f2937;
     --surface-100: #374151;
@@ -80,7 +99,7 @@
     --surface-700: #f3f4f6;
     --surface-800: #f9fafb;
     --surface-900: #ffffff;
-  
+
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -91,7 +110,7 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
-  
+
     --surface-ground: #111827;
     --surface-section: #111827;
     --surface-card: #1f2937;
@@ -115,7 +134,7 @@
     --primary-700: #295bac;
     --primary-800: #204887;
     --primary-900: #183462;
-  
+
     --success-50: #f4fcf7;
     --success-100: #caf1d8;
     --success-200: #a0e6ba;
@@ -126,7 +145,7 @@
     --success-700: #188a42;
     --success-800: #136c34;
     --success-900: #0e4f26;
-  
+
     --error-50: #fff5f5;
     --error-100: #ffd0ce;
     --error-200: #ffaca7;
@@ -137,7 +156,7 @@
     --error-700: #b32b23;
     --error-800: #8c221c;
     --error-900: #661814;
-  
+
     --warn-50: #fefbf3;
     --warn-100: #faedc4;
     --warn-200: #f6de95;
@@ -148,7 +167,7 @@
     --warn-700: #a47d06;
     --warn-800: #816204;
     --warn-900: #5e4803;
-  
+
     --surface-0: #ffffff;
     --surface-50: #f9fafb;
     --surface-100: #f3f4f6;
@@ -160,7 +179,7 @@
     --surface-700: #374151;
     --surface-800: #1f2937;
     --surface-900: #111827;
-  
+
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -171,7 +190,7 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
-  
+
     --surface-ground: #f9fafb;
     --surface-section: #ffffff;
     --surface-card: #ffffff;
@@ -184,6 +203,7 @@
     --highlight-text-color: #1d4ed8;
     --surface-button: #ffffff;
   }
+}
   
   @layer base {
     input[type='number']::-webkit-inner-spin-button,

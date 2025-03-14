@@ -1,7 +1,7 @@
 <template>
   <div :data-theme="theme" class="bg-surface-ground text-surface-900 flex min-h-screen flex-col">
     <AppHeader @darkModeToggled="toggleDarkMode" :darkmode="theme === 'dark'" />
-    <div class="flex-grow">
+    <div class="grow">
 
       <NuxtPage />
     </div>

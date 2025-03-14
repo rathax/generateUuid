@@ -3,7 +3,7 @@
   <div class="mx-auto flex flex-col items-center max-w-[48rem]">
     <slot></slot>
     <div
-      class="flex flex-col sm:flex-row w-full justify-between items-center text-center px-4 md:px-8 py-3 border border-surface-border transition-all appearance-none rounded-md focus:outline-none focus:outline-offset-0  bg-surface-card shadow-sm shadow-surface-100 ">
+      class="flex flex-col sm:flex-row w-full justify-between items-center text-center px-4 md:px-8 py-3 border border-surface-border transition-all appearance-none rounded-md focus:outline-hidden focus:outline-offset-0  bg-surface-card shadow-xs shadow-surface-100 ">
       <div class=" text-2xl">
         <ClientOnly :class="[{'text-transparent': true }]" fallback="00000000-0000-0000-0000-000000000000">
           <span>{{ uuid }}</span>

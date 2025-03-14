@@ -13,7 +13,7 @@
 </template>
       
 <script setup lang="ts">
-import { useHead } from "@unhead/vue";
+import { useHead } from "#imports";
 import defaultJsonLd from "~/utils/defaultJsonLd";
 
 

@@ -27,7 +27,7 @@
       
       
 <script setup lang="ts">1
-import { useHead } from "@unhead/vue";
+import { useHead } from "#imports";
 import defaultJsonLd from "~/utils/defaultJsonLd";
 
 const metaDescription = "Do you have any feedback, leave me an email at rathaxdev@gmail.com"
