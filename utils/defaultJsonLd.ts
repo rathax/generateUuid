@@ -24,7 +24,8 @@ export default [
         },
         "logo": { "@id": "https://generateuuid.net/#/schema/person/image/" },
         "sameAs": [
-            "https://generateuuid.net",
+            "https://fontdownloader.org/about",
+            "https://generateuuid.net/about",
             "https://x.com/godlikeplayer1",
             "https://www.reddit.com/user/godlikeplayer2",
             "https://github.com/rathax"
