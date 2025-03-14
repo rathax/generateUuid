@@ -5,6 +5,7 @@
 .nitro
 .cache
 .history
+.history/*
 dist
 
 # Node dependencies
