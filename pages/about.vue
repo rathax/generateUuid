@@ -16,11 +16,6 @@
                     class="font-bold">rathaxdev@gmail.com</a> or visit the <a
                     href="https://github.com/rathax/generateUuid" target="_blank">GitHub Project.</a>
             </p>
-            <div class="flex justify-center mt-10">
-                <div class="flex flex-col gap-5">
-                    <img width="200" src="/rathax.jpg" alt="RatHax" />
-                </div>
-            </div>
         </section>
     </div>
 </template>

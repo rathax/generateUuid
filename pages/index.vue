@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import defaultJsonLd from '~/utils/defaultJsonLd';
 
-const metaDescription = "Generate unique UUIDs. Whether you need single or bulk UUIDs. This tool offers timestamp extraction, QR code generation, and more."
+const metaDescription = "Generate unique UUIDs. Version 7 now supported. Whether you need single or bulk UUIDs or tool offers timestamp extraction and more."
 const metaTitle = "Generate UUID Tool - Online UUID Generator for developers"
 const metaUrl = "https://generateuuid.net/"
 
@@ -62,7 +62,7 @@ useHead({
     },
     {
       name: 'keywords',
-      content: 'generate uuid online, generate uuid, uuid generator, uuid customization, online uuid tool, free uuid generator, generate uuid net'
+      content: 'UUIDv7, version 7, uuid 7, generate uuid online, generate uuid, uuid generator, uuid customization, online uuid tool, free uuid generator, generate uuid net'
     },
   ],
   link: [{ rel: "canonical", href: metaUrl }],
@@ -79,6 +79,7 @@ useHead({
       "operatingSystem": "All",
       "softwareHelp": "https://github.com/rathax/generateUuid",
       "featureList": "https://github.com/rathax/generateUuid/blob/main/README.md#key-features",
+      "image": "https://generateuuid.net/originalIcon512.png",
       "offers": {
         "@type": "Offer",
         "price": "0"

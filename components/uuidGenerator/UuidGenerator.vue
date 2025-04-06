@@ -21,8 +21,8 @@
         <div class="mb-5">
           <div class="flex gap-5 md:gap-10 items-center" role="radiogroup" aria-labelledby="gc8Dz">
             <label id="gc8Dz">Type:</label>
-            <FormRadio v-model="typetoGenerate" label="Uuid V1" value="V1" id="dv8gfh" />
-            <FormRadio v-model="typetoGenerate" label="Uuid V4" value="V4" id="dcghdD" />
+            <FormRadio v-model="typetoGenerate" label="Uuid V4" value="V4" id="dv8gfh" />
+            <FormRadio v-model="typetoGenerate" label="Uuid V7" value="V7" id="dcghdD" />
           </div>
           <div class="flex gap-5 md:gap-10 my-5 items-center" role="radiogroup" aria-labelledby="dc8ev">
             <label id="dc8ev">Format:</label>
@@ -57,14 +57,11 @@
           <FormTextArea rows="10" v-model="generatedOutput" readonly />
         </div>
       </FormCard>
-
     </section>
-
   </div>
 
 
   <div class="bg-surface-card pt-28 pb-14">
-
     <UuidGeneratorFaq class="max-w-4xl mx-auto" />
     <div class="flex self-center justify-center mt-14">
         <img src="/originalIcon512.png" alt="Geneate UUID Logo" width="128"/>
@@ -75,7 +72,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { v4 as uuidv4, v1 as uuidv1, v7 as uuidv7 } from 'uuid';
+import { v4 as uuidv4, v7 as uuidv7 } from 'uuid';
 
 import FormRadio from "@/components/FormRadio.vue";
 import FormTextArea from "@/components/FormTextArea.vue"
@@ -98,7 +95,7 @@ const copyToClipboard = (string: string) => {
 }
 
 const amountoGenerate = ref<number>(20)
-const typetoGenerate = ref<'V1' | "V4" | "Guid">("V1")
+const typetoGenerate = ref<'V7' | "V4" | "Guid">("V7")
 const formateToGenrate = ref<'plain-text' | "json" | "comma-seperated">("plain-text")
 const encodingToGenerate = ref<'plain' | "base64" | "base64Url">("plain")
 
@@ -109,7 +106,7 @@ const setMaxAmount = () => {
 }
 
 const getIdType = () => {
-  if (typetoGenerate.value === 'V1') return uuidv1
+  if (typetoGenerate.value === 'V7') return uuidv7
   if (typetoGenerate.value === 'V4') return uuidv4
   return () => "error"
 }
@@ -126,6 +123,7 @@ const generateIds = () => {
   const ids = []
 
   for (let i = 0; i < amountoGenerate.value; i++) {
+
     ids.push(encoding(type()))
   }
 
